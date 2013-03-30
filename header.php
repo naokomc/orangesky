@@ -22,9 +22,12 @@
 <div id="page">
 <div id="main">
 
-<ul id="menu">
-	<?php wp_list_pages('title_li='); ?>
-</ul>
+<?php
+wp_nav_menu(array(
+	'theme_location' => 'header-menu',
+	'menu_id' => 'menu'
+));
+?>
 
 <div id="header">
 	<div id="headerimg">
