@@ -1,4 +1,4 @@
-/*  
+/*
 Theme Name: OrangeSky 2.0
 Theme URI: http://blog.detlog.org/orangesky/
 Description: WordPress theme inspired by Alexi Murdoch's song "Orange Sky".
@@ -11,9 +11,27 @@ Author URI: http://blog.detlog.org/
 
 	Thank you Michael Heilemann for creating the brilliant kubrick theme!
 	I had learned a lot from it in the process of creating this one.
-	
+
 	This updated version was released on January 17, 2006.
 */
+
+.clearfix:before,
+.clearfix:after,
+#page:before,
+#page:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after,
+#page:after {
+  clear: both;
+}
+
+.clearfix,
+#page {
+  *zoom: 1;
+}
 
 /* General Rules */
 body,
@@ -167,7 +185,7 @@ h3 {
 	height: 132px;
 	width: 550px;
 	float: left;
-	background: url(images/os_header.jpg) no-repeat 8px 0; 
+	background: url(images/os_header.jpg) no-repeat 8px 0;
 	}
 
 #sidebar {
@@ -242,7 +260,7 @@ img.centered {
 	display: block;
 	margin: 0 auto;
 	}
-	
+
 img.floatright {
 	padding: 4px;
 	margin: 0 0 5px 10px;
@@ -261,12 +279,12 @@ img.floatleft {
 .alignright {
 	float: right;
 	}
-	
+
 .alignleft {
 	float: left
 	}
 
-/* Begin Lists */ 
+/* Begin Lists */
 .entry ul,
 ul.commentdata,
 ul.links {
@@ -291,7 +309,7 @@ ul.links ul li {
 ul.links h2 {
  	padding: 10px 0 5px 0;
  	}
- 
+
 .entry ol {
 	padding: 0 0 1em 40px;
 	}

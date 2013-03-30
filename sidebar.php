@@ -1,7 +1,7 @@
 </div>
 <div id="sidebar">
 		<ul>
-			
+
 			<li>
 				<?php include (TEMPLATEPATH . '/searchform.php'); ?>
 			</li>
@@ -14,22 +14,22 @@
 
 			<?php /* If this is a category archive */ if (is_category()) { ?>
 			<li><p>You are currently browsing the archives for the <strong><?php single_cat_title(''); ?></strong> category.</p></li>
-			
+
 			<?php /* If this is a yearly archive */ } elseif (is_day()) { ?>
-			<li><p>You are currently browsing the <strong><a href="<?php echo get_settings('siteurl'); ?>"><?php echo bloginfo('name'); ?></a></strong> weblog archives for the day <strong><?php the_time('l, F jS, Y'); ?></strong>.</p></li>
-			
+			<li><p>You are currently browsing the <strong><a href="<?php echo get_option('siteurl'); ?>"><?php echo bloginfo('name'); ?></a></strong> weblog archives for the day <strong><?php the_time('l, F jS, Y'); ?></strong>.</p></li>
+
 			<?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
-			<li><p>You are currently browsing the <strong><a href="<?php echo get_settings('siteurl'); ?>"><?php echo bloginfo('name'); ?></a></strong> weblog archives for <?php the_time('F, Y'); ?>.</p></li>
+			<li><p>You are currently browsing the <strong><a href="<?php echo get_option('siteurl'); ?>"><?php echo bloginfo('name'); ?></a></strong> weblog archives for <?php the_time('F, Y'); ?>.</p></li>
 
       <?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
-			<li><p>You are currently browsing the <strong><a href="<?php echo get_settings('siteurl'); ?>"><?php echo bloginfo('name'); ?></a></strong> weblog archives for the year <strong><?php the_time('Y'); ?></strong>.</p></li>
-			
+			<li><p>You are currently browsing the <strong><a href="<?php echo get_option('siteurl'); ?>"><?php echo bloginfo('name'); ?></a></strong> weblog archives for the year <strong><?php the_time('Y'); ?></strong>.</p></li>
+
 		 <?php /* If this is a monthly archive */ } elseif (is_search()) { ?>
-			<li><p>You have searched the <strong><a href="<?php echo get_settings('siteurl'); ?>"><?php echo bloginfo('name'); ?></a></strong> weblog archives
-			for <strong>'<?php echo wp_specialchars($s); ?>'</strong>.</p></li>
+			<li><p>You have searched the <strong><a href="<?php echo get_option('siteurl'); ?>"><?php echo bloginfo('name'); ?></a></strong> weblog archives
+			for <strong>'<?php echo esc_html($s); ?>'</strong>.</p></li>
 
 			<?php /* If this is a monthly archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-			<li><p>You are currently browsing the <strong><a href="<?php echo get_settings('siteurl'); ?>"><?php echo bloginfo('name'); ?></a></strong> weblog archives.</p></li>
+			<li><p>You are currently browsing the <strong><a href="<?php echo get_option('siteurl'); ?>"><?php echo bloginfo('name'); ?></a></strong> weblog archives.</p></li>
 
 			<?php } ?>
 
@@ -43,14 +43,14 @@
 
 			<li><h2><?php _e('Categories'); ?></h2>
 				<ul>
-				<?php wp_list_cats('optioncount=1&sort_column=name&hide_empty=0'); ?>
+				<?php wp_list_categories('optioncount=1&sort_column=name&hide_empty=0'); ?>
 				</ul>
 			</li>
 
 			<?php /* If this is the front page */ if ( is_home()) { ?>
-				<?php get_links_list(); ?>
+				<?php wp_list_bookmarks(); ?>
 			<?php } ?>
-			
+
 			<?php /* If this is the front page */ if ( is_home() || is_page() ) { ?>
 			<?php if (function_exists('wp_theme_switcher')) { wp_theme_switcher(); } ?>
 				<?php if (function_exists('wp_theme_switcher')) { ?>
@@ -58,7 +58,7 @@
 				<?php wp_theme_switcher(); ?>
 				</li>
 				<?php } ?>
-				
+
 				<li><h2><?php _e('Meta'); ?></h2>
 				<ul>
 					<?php wp_register(); ?>
@@ -70,7 +70,7 @@
 				</ul>
 				</li>
 			<?php } ?>
-			
+
 		</ul>
 	</div>
 

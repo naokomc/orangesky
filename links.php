@@ -11,11 +11,11 @@ Template Name: Links
 <h2 class="pagetitle">Links</h2>
 
 	<ul class="links">
-		<?php get_links_list(); ?>
+		<?php wp_list_bookmarks(); ?>
 	</ul>
 
 </div>
-</div>	
+</div>
 
 <?php get_sidebar(); ?>
 
