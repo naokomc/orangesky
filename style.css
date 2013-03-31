@@ -1,10 +1,13 @@
 /*
-Theme Name: OrangeSky 2.0
-Theme URI: http://blog.detlog.org/orangesky/
-Description: WordPress theme inspired by Alexi Murdoch's song "Orange Sky".
-Version: 2.0
-Author: Naoko McCracken
-Author URI: http://blog.detlog.org/
+Theme Name: OrangeSky
+Theme URI: http://en.naoko.cc/orangesky/
+Author: Naoko Takano (McCracken)
+Author URI: http://en.naoko.cc/
+Description: Orange & teal theme inspired by Alexi Murdoch's song "Orange Sky".
+Version: 3.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: orange, two-columns, right-sidebar, fixed-width, custom-menu
 
 	This WordPress theme is released under GPL:
 	http://www.opensource.org/licenses/gpl-license.php
@@ -12,7 +15,9 @@ Author URI: http://blog.detlog.org/
 	Thank you Michael Heilemann for creating the brilliant kubrick theme!
 	I had learned a lot from it in the process of creating this one.
 
-	This updated version was released on January 17, 2006.
+	This updated version was released with help from Keita Kobayashi.
+
+	https://github.com/naokomc/orangesky
 */
 
 .clearfix:before,

@@ -3,12 +3,12 @@
 		<ul>
 
 			<li>
-				<?php include (TEMPLATEPATH . '/searchform.php'); ?>
+				<?php get_search_form(); ?>
 			</li>
 
 			<?php /* If this is the front page */ if (is_home()) { ?>
-			<li><h2><?php _e('Author'); ?></h2>
-			<p>Write a short description of yourself. Additionally use about.php template to create a separate about page. <a href="about/">&raquo; more about me</a></p>
+			<li><h2><?php _e('Author', 'orangesky'); ?></h2>
+			<p>Write a short description of yourself. Additionally use about.php template to create a separate about page.<a href="about/">&raquo; more about me</a></p>
 			</li>
 			<?php } ?>
 
@@ -33,17 +33,17 @@
 
 			<?php } ?>
 
-			<?php wp_list_pages('title_li=<h2>' . __('Pages') . '</h2>' ); ?>
+			<?php wp_list_pages('title_li=<h2>' . __('Pages', 'orangesky') . '</h2>' ); ?>
 
-			<li><h2><?php _e('Archives'); ?></h2>
+			<li><h2><?php _e('Archives', 'orangesky'); ?></h2>
 				<ul>
 				<?php wp_get_archives('type=monthly'); ?>
 				</ul>
 			</li>
 
-			<li><h2><?php _e('Categories'); ?></h2>
+			<li><h2><?php _e('Categories', 'orangesky'); ?></h2>
 				<ul>
-				<?php wp_list_categories('optioncount=1&sort_column=name&hide_empty=0'); ?>
+				<?php wp_list_categories('optioncount=1&sort_column=name&title_li='); ?>
 				</ul>
 			</li>
 
@@ -54,18 +54,18 @@
 			<?php /* If this is the front page */ if ( is_home() || is_page() ) { ?>
 			<?php if (function_exists('wp_theme_switcher')) { wp_theme_switcher(); } ?>
 				<?php if (function_exists('wp_theme_switcher')) { ?>
-				<li><h2>< ?php _e('Themes'); ?></h2>
+				<li><h2><?php _e('Themes', 'orangesky'); ?></h2>
 				<?php wp_theme_switcher(); ?>
 				</li>
 				<?php } ?>
 
-				<li><h2><?php _e('Meta'); ?></h2>
+				<li><h2><?php _e('Meta', 'orangesky'); ?></h2>
 				<ul>
 					<?php wp_register(); ?>
 					<li><?php wp_loginout(); ?></li>
 					<li><a href="http://gmpg.org/xfn/"><abbr title="XHTML Friends Network">XFN</abbr></a></li>
-					<li><a href="http://wordpress.org/" title="<?php _e('Powered by WordPress, state-of-the-art semantic personal publishing platform.'); ?>">WordPress</a> v.<?php bloginfo('version'); ?></li>
-					<li>Orange Sky theme designed by <a href="http://blog.detlog.org">Nao</a></li>
+					<li><a href="http://wordpress.org/" title="<?php _e('Powered by WordPress, state-of-the-art semantic personal publishing platform.', 'orangesky'); ?>">WordPress</a> v.<?php bloginfo('version'); ?></li>
+					<li>Orange Sky theme designed by <a href="http://en.naoko.cc/">Nao</a></li>
 					<?php wp_meta(); ?>
 				</ul>
 				</li>

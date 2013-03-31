@@ -8,14 +8,14 @@ Template Name: Archives
 
 <div id="content">
 
-<?php include (TEMPLATEPATH . '/searchform.php'); ?>
+<?php get_search_form(); ?>
 
-<h2>Archives by Month:</h2>
+<h2><?php _e('Archives by Month:', 'orangesky'); ?></h2>
   <ul>
     <?php wp_get_archives('type=monthly'); ?>
   </ul>
 
-<h2>Archives by Subject:</h2>
+<h2><?php _e('Archives by Subject:', 'orangesky'); ?></h2>
   <ul>
      <?php wp_list_categories(); ?>
   </ul>

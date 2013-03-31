@@ -9,7 +9,7 @@
 			<div class="alignright"><?php next_post_link(' %link &raquo;') ?></div>
 		</div>
 
-		<div class="post">
+		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<h2 class="postdate"><?php the_time('F jS, Y') ?></h2>
 			<h2 id="post-<?php the_ID(); ?>" class="posttitle"><a href="<?php echo get_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title(); ?>"><?php the_title(); ?></a></h2>
 
@@ -45,11 +45,11 @@
 					<li>Trackback URI: <input type="text" value="<?php trackback_url(); ?>" class="tbinput" title="Ctrl (Apple) + A to select URI" /></li>
 					<li><?php post_comments_feed_link('Comments RSS 2.0'); ?></li>
 				</ul>
-				<?php comments_template(); ?>
+				<?php comment_form(); ?>
 
 	<?php endwhile; else: ?>
 
-		<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+		<p><?php _e('Sorry, no posts matched your criteria.', 'orangesky'); ?></p>
 
 <?php endif; ?>
 
